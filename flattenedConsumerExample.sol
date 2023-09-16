@@ -2425,7 +2425,8 @@ contract ChainlinkVRFv2DirectFundingConsumerExample is ChainlinkVRFv2DirectFundi
     // EVENTS
     event RandomnessProvided(
         bytes32 indexed requestId,
-        uint256[] indexed randomWords
+        uint256 indexed randomWordIndex,
+        uint256 indexed randomWord
     );
 
     // ERRORS
@@ -2456,6 +2457,8 @@ contract ChainlinkVRFv2DirectFundingConsumerExample is ChainlinkVRFv2DirectFundi
     function fulfillRandomWords(bytes32 _requestId, uint256[] memory _randomWords) internal override {
         if (!requestExists[_requestId])
             revert RequestDoesntExist(_requestId, _randomWords);
-        emit RandomnessProvided(_requestId, _randomWords);
+        for (uint256 i = 0; i < _randomWords.length; i++) {
+            emit RandomnessProvided(_requestId, i, _randomWords[i]);
+        }    
     }
 }

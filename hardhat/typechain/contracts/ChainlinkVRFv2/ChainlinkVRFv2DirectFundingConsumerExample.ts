@@ -111,7 +111,7 @@ export interface ChainlinkVRFv2DirectFundingConsumerExampleInterface
     "OraclePermissionSet(address,address,bool)": EventFragment;
     "OracleThresholdSet(address,uint256)": EventFragment;
     "ProxyContractSet(address,address)": EventFragment;
-    "RandomnessProvided(bytes32,uint256[])": EventFragment;
+    "RandomnessProvided(bytes32,uint256,uint256)": EventFragment;
     "SignaturesCheckPassedRandomnessReceived(bytes32,uint256[])": EventFragment;
   };
 
@@ -163,10 +163,11 @@ export type ProxyContractSetEventFilter =
 
 export interface RandomnessProvidedEventObject {
   requestId: string;
-  randomWords: BigNumber[];
+  randomWordIndex: BigNumber;
+  randomWord: BigNumber;
 }
 export type RandomnessProvidedEvent = TypedEvent<
-  [string, BigNumber[]],
+  [string, BigNumber, BigNumber],
   RandomnessProvidedEventObject
 >;
 
@@ -331,13 +332,15 @@ export interface ChainlinkVRFv2DirectFundingConsumerExample
       proxyContractAddress?: PromiseOrValue<string> | null
     ): ProxyContractSetEventFilter;
 
-    "RandomnessProvided(bytes32,uint256[])"(
+    "RandomnessProvided(bytes32,uint256,uint256)"(
       requestId?: PromiseOrValue<BytesLike> | null,
-      randomWords?: PromiseOrValue<BigNumberish>[] | null
+      randomWordIndex?: PromiseOrValue<BigNumberish> | null,
+      randomWord?: PromiseOrValue<BigNumberish> | null
     ): RandomnessProvidedEventFilter;
     RandomnessProvided(
       requestId?: PromiseOrValue<BytesLike> | null,
-      randomWords?: PromiseOrValue<BigNumberish>[] | null
+      randomWordIndex?: PromiseOrValue<BigNumberish> | null,
+      randomWord?: PromiseOrValue<BigNumberish> | null
     ): RandomnessProvidedEventFilter;
 
     "SignaturesCheckPassedRandomnessReceived(bytes32,uint256[])"(

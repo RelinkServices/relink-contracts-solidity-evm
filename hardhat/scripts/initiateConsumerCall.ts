@@ -33,4 +33,4 @@ task("init.consumer.request")
     types.string
   );
 // npx hardhat --network proxyTestnet init.consumer.request --addr 0x099f0CC4F24Be804f5eEDC8F86fc69e114905B08
-// npx hardhat --network proxyMainnet init.consumer.request --addr 0x05dd9422DEe32c9046Cd1cf17832299fF9CE5B1f
+// npx hardhat --network proxyMainnet init.consumer.request --addr 0x7d27dA43512e4d6a6D1B3a9a5fC41e190734f920
