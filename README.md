@@ -37,7 +37,9 @@ Relink Oracle Addresses for Signature Verification:
 
 ### Initiate Consumer Example Randomness Request
 
-`npx hardhat --network proxyMainnet init.consumer.request --addr 0x7d27dA43512e4d6a6D1B3a9a5fC41e190734f920`
+Horizen EON Mainnet: `npx hardhat --network proxyMainnet init.consumer.request --addr 0x7d27dA43512e4d6a6D1B3a9a5fC41e190734f920`
+
+Horizen Gobi Testnet: `npx hardhat --network proxyTestnet init.consumer.request --addr 0xBbbcA3BF56d4E58DffE7E29D1b9362252CB74464`
 
 ## Example
 
@@ -47,3 +49,10 @@ Relink Oracle Addresses for Signature Verification:
 - `RequestRandomWords` in [this transaction](https://polygonscan.com/tx/0x53f71c5a4074c362225da864cae1b0e52ea9302828861d8c5a21170e980a5a4d) on Polygon
 - `RandomnessReceived` in [this transaction](https://polygonscan.com/tx/0x5eae34a9d62aff91017ca144614db1ed36627517aca0519e4da2c42ec0323e4c#eventlog) on Polygon
 - `CallbackWithRandomness` in [this transaction](https://eon-explorer.horizenlabs.io/tx/0x38dcdb635b99916d5b0925df4eb1eb30638454aa02211732ef90ffd62c1fd0e6/logs) on Horizen EON
+
+### Horizen Gobi Testnet
+
+- `InitiateRandomnessRequest` in [this transaction](https://gobi-explorer.horizen.io/tx/0x77b8d9eb14013e7d689e59a596e0d8f18490e26630ed6249010c8aed154b9eec/logs) on Horizen Gobi Testnet
+- `RequestRandomWords` in [this transaction](https://mumbai.polygonscan.com/tx/0x5656858283870737c0a22b6c15db9e3e70f77a7f943035b64eb51b3f4591a4a3) on Polygon Testnet "Mumbai"
+- `RandomnessReceived` in [this transaction](https://mumbai.polygonscan.com/tx/0x3cb27e03bb39caa227af4011f4ba591313718e5ec77fa60d61c6444a1b71b630#eventlog) on Polygon Testnet "Mumbai"
+- `CallbackWithRandomness` in [this transaction](https://gobi-explorer.horizen.io/tx/0xbc2bca9ba30ba68b29f791b6efc1aaa35a2dca419cc59828e7c85eae88c6409c/logs) on Horizen Gobi Testnet
